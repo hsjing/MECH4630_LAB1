@@ -3,6 +3,7 @@
 #include <string>
 
 #define INCH_TO_M 0.0254
+#define RING_RADIUS 0.01
 
 using namespace std;
 
@@ -141,7 +142,7 @@ public:
 	* @param float
 	* @return void
 	*/
-	void calcangle(float nangle) { angle = nangle; };
+	void calcangle(float ry);
 	/**	@fn calctension
 	* @brief calculates tension in stretched string
 	* @param void

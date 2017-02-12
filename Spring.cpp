@@ -16,6 +16,11 @@ void CSpring::calcLs(float rx, float ry)
 	Ls = sqrt(pow((x - rx), 2) + pow((y - ry), 2));
 }
 
+void CSpring::calcangle(float ry)
+{
+	angle = asin((y - ry) / (Ls + RING_RADIUS));
+}
+
 void CSpring::calctension()
 {
 	tension = Fcs + (k * ((Ls * INCH_TO_M) - L0));

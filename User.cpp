@@ -48,11 +48,13 @@ bool CUser::outfile()
 
 }
 
-void CUser::loadspringconstants(void)
+void CUser::updatespring(void)
 {
+	// load spring constants (Ls must be loaded before angle and tension)
 	for (int i = 0; i < springs.size(); i++)
 	{
 		springs[i].calcLs(rx, ry);
+		springs[i].calcangle(ry);
 		springs[i].calctension();
 	}
 }

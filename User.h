@@ -57,7 +57,7 @@ public:
 	* @param void
 	* @return void
 	*/
-	void loadspringconstants(void);	
+	void updatespring(void);	
 
 private:
 	vector<CSpring> springs;	///< vector of simulated strings
