@@ -2,15 +2,11 @@
 
 #include <string>
 
-
-
-
-
-
+using namespace std;
 
 /**
 *
-* @brief Spring object
+* @brief Spring object: properties and operations
 *
 * This object represents a spring and its physical properties:
 * its spring constant, compression force, initial length, 
@@ -23,133 +19,141 @@
 class CSpring
 {
 public:
+
+	//////////////////////////////////////////////////
+	//constructors and destructors					//
+	//////////////////////////////////////////////////
+
 	CSpring();
 	~CSpring();
 
-	///////////////////////////////////////////////
-	// functions that return properties of spring//
-	///////////////////////////////////////////////
+	//////////////////////////////////////////////////
+	//functions that return properties of spring	//
+	//////////////////////////////////////////////////
 
-	/**
-	@fn getk
-	@brief return k
-	@param void
-	@return float
+	/** @fn getk
+	* @brief return k
+	* @param void
+	* @return float
 	*/
 	float getk() { return k; };
-	/**
-	@fn getFcs
-	@brief return compression force
-	@param void
-	@return float
+	/** @fn getFcs
+	* @brief return compression force
+	* @param void
+	* @return float
 	*/
 	float getFcs() { return Fcs; };
-	/**
-	@fn getL0
-	@brief return L0 (length initial)
-	@param void
-	@return float
+	/**	@fn getL0
+	* @brief return L0 (length initial)
+	* @param void
+	* @return float
 	*/
 	float getL0() { return L0; };
-	/**
-	@fn getLs
-	@brief return Ls (length stretched)
-	@param void
-	@return float
+	/**	@fn getLs
+	* @brief return Ls (length stretched)
+	* @param void
+	* @return float
 	*/
 	float getLs() { return Ls; };
-	/**
-	@fn getangle
-	@brief return angle in degrees
-	@param void
-	@return float
+	/**	@fn getangle
+	* @brief return angle in degrees
+	* @param void
+	* @return float
 	*/
 	float getangle() { return angle; };
-	/**
-	@fn gettension
-	@brief return tension in stretched string
-	@param void
-	@return float
+	/**	@fn gettension
+	* @brief return tension in stretched string
+	* @param void
+	* @return float
 	*/
 	float gettension() { return tension; };
-	/**
-	@fn getx
-	@brief return starting x
-	@param void
-	@return float
+	/**	@fn getx
+	* @brief return starting x
+	* @param void
+	* @return float
 	*/
 	float getx() { return x; };
-	/**
-	@fn gety
-	@brief return starting y
-	@param void
-	@return float
+	/**	@fn gety
+	* @brief return starting y
+	* @param void
+	* @return float
 	*/
 	float gety() { return y; };
-
-	///////////////////////////////////////////////
-	// functions that sets properties of spring  //
-	///////////////////////////////////////////////
-
-	/**
-	@fn setk
-	@brief set k
-	@param float
-	@return void
+	/**	@fn getc
+	* @brief return colour
+	* @param void
+	* @return string
 	*/
-	void setk( float nk ) { k = nk; };
-	/**
-	@fn setFcs
-	@brief set compression force
-	@param float
-	@return void
+	string getc() { return colour; };
+
+	//////////////////////////////////////////////////
+	//functions that sets properties of spring		//
+	//////////////////////////////////////////////////
+
+	/**	@fn setk
+	* @brief set k
+	* @param float
+	* @return void
+	*/
+	void setk(float nk) { k = nk; };
+	/**	@fn setFcs
+	* @brief set compression force
+	* @param float
+	* @return void
 	*/
 	void setFcs(float nFcs) { Fcs = nFcs; };
-	/**
-	@fn setL0
-	@brief set L0 (length initial)
-	@param float
-	@return void
+	/**	@fn setL0
+	* @brief set L0 (length initial)
+	* @param float
+	* @return void
 	*/
 	void setL0(float nL0) { L0 = nL0; };
-	/**
-	@fn setLs
-	@brief set Ls (length stretched)
-	@param float
-	@return void
+	/**	@fn setLs
+	* @brief set Ls (length stretched)
+	* @param float
+	* @return void
 	*/
 	void setLs(float nLs) { Ls = nLs; };
-	/**
-	@fn setangle
-	@brief set angle in degrees
-	@param float
-	@return void
+	/**	@fn setangle
+	* @brief set angle in degrees
+	* @param float
+	* @return void
 	*/
 	void setangle(float nangle) { angle = nangle; };
-	/**
-	@fn settension
-	@brief set tension in stretched string
-	@param float
-	@return void
+	/**	@fn settension
+	* @brief set tension in stretched string
+	* @param float
+	* @return void
 	*/
 	void settension(float ntension) { tension = ntension; };
-	/**
-	@fn setx
-	@brief set starting x
-	@param float
-	@return void
+	/**	@fn setx
+	* @brief set starting x
+	* @param float
+	* @return void
 	*/
 	void setx(float nx) { x = nx; };
-	/**
-	@fn sety
-	@brief set starting y
-	@param float
-	@return void
+	/**	@fn sety
+	* @brief set starting y
+	* @param float
+	* @return void
 	*/
 	void sety(float ny) { y = ny; };
+	/**	@fn setc
+	* @brief set colour
+	* @param string
+	* @return void
+	*/
+	void setc(string nc) { colour = nc; };
 
 private:
+	//!@{ 
+	//! springProperties consist of: k = spring constant
+	//! Fcs = compression force, L0 = initial length
+	//! Ls = stretched length, angle = angle in degrees from horizontal
+	//! tension = tension of spring, x, y = cartesian coordinates of spring
+	//! and colour = string colour (or any string form of identification)
 	float k, Fcs, L0, Ls, angle, tension, x, y;	
-	std::string colour;	
+	std::string colour;
+	//!@}
 };
 
