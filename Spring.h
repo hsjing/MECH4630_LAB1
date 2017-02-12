@@ -2,6 +2,8 @@
 
 #include <string>
 
+#define INCH_TO_M 0.0254
+
 using namespace std;
 
 /**
@@ -49,24 +51,6 @@ public:
 	* @return float
 	*/
 	float getL0() { return L0; };
-	/**	@fn getLs
-	* @brief return Ls (length stretched)
-	* @param void
-	* @return float
-	*/
-	float getLs() { return Ls; };
-	/**	@fn getangle
-	* @brief return angle in degrees
-	* @param void
-	* @return float
-	*/
-	float getangle() { return angle; };
-	/**	@fn gettension
-	* @brief return tension in stretched string
-	* @param void
-	* @return float
-	*/
-	float gettension() { return tension; };
 	/**	@fn getx
 	* @brief return starting x
 	* @param void
@@ -85,6 +69,25 @@ public:
 	* @return string
 	*/
 	string getc() { return colour; };
+
+	/**	@fn getLs
+	* @brief return Ls (length stretched)
+	* @param void
+	* @return float
+	*/
+	float getLs() { return Ls; };
+	/**	@fn getangle
+	* @brief return angle in degrees
+	* @param void
+	* @return float
+	*/
+	float getangle() { return angle; };
+	/**	@fn gettension
+	* @brief return tension in stretched string
+	* @param void
+	* @return float
+	*/
+	float gettension() { return tension; };
 
 	//////////////////////////////////////////////////
 	//functions that sets properties of spring		//
@@ -108,24 +111,6 @@ public:
 	* @return void
 	*/
 	void setL0(float nL0) { L0 = nL0; };
-	/**	@fn setLs
-	* @brief set Ls (length stretched)
-	* @param float
-	* @return void
-	*/
-	void setLs(float nLs) { Ls = nLs; };
-	/**	@fn setangle
-	* @brief set angle in degrees
-	* @param float
-	* @return void
-	*/
-	void setangle(float nangle) { angle = nangle; };
-	/**	@fn settension
-	* @brief set tension in stretched string
-	* @param float
-	* @return void
-	*/
-	void settension(float ntension) { tension = ntension; };
 	/**	@fn setx
 	* @brief set starting x
 	* @param float
@@ -144,6 +129,25 @@ public:
 	* @return void
 	*/
 	void setc(string nc) { colour = nc; };
+
+	/**	@fn calcLs
+	* @brief calculates Ls (length stretched)
+	* @param float rx (ring x), float ry (ring y)
+	* @return void
+	*/
+	void calcLs(float rx, float ry);
+	/**	@fn calcangle
+	* @brief set angle in degrees
+	* @param float
+	* @return void
+	*/
+	void calcangle(float nangle) { angle = nangle; };
+	/**	@fn calctension
+	* @brief calculates tension in stretched string
+	* @param void
+	* @return void
+	*/
+	void calctension();
 
 private:
 	//!@{ 

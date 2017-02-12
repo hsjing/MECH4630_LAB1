@@ -14,6 +14,7 @@ using namespace std;
 #define inputfile "input.txt"
 #define outputfile "output.txt"
 
+
 /**
 *
 * @brief User object: simulation environment and operations
@@ -48,8 +49,15 @@ public:
 	bool outfile(void);
 
 	//////////////////////////////////////////////////
-	//file i/o operations							//
+	//calculation operations						//
 	//////////////////////////////////////////////////
+
+	/**	@fn loadspringconstants
+	* @brief calculates relevant spring constants for entire simulation
+	* @param void
+	* @return void
+	*/
+	void loadspringconstants(void);	
 
 private:
 	vector<CSpring> springs;	///< vector of simulated strings

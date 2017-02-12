@@ -42,3 +42,17 @@ bool CUser::loadfile()
 	}
 	return false;
 }
+
+bool CUser::outfile()
+{
+
+}
+
+void CUser::loadspringconstants(void)
+{
+	for (int i = 0; i < springs.size(); i++)
+	{
+		springs[i].calcLs(rx, ry);
+		springs[i].calctension();
+	}
+}
