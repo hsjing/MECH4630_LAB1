@@ -5,6 +5,9 @@
 
 #define INCH_TO_M 0.0254
 #define RING_RADIUS 0.0095
+#define PI 3.14159
+#define TRY_ZERO 0.000000001
+#define DUMMY_LS 10
 
 using namespace std;
 
@@ -23,10 +26,6 @@ using namespace std;
 class CSpring
 {
 public:
-
-	//////////////////////////////////////////////////
-	//constructors and destructors					//
-	//////////////////////////////////////////////////
 
 	CSpring();
 	~CSpring();

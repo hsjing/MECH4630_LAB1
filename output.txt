@@ -1,0 +1,21 @@
+Itr    Sum Fx (N)    Sum Fy (N)     RingX (In)     RingY (In)
+1          -26.12         9.639     7.52713368     8.75505902
+2          0.9973        -1.336     8.11492397     7.99311647
+3       -0.008239       -0.0239     8.11035569     7.97921034
+4      2.976e-006   -2.952e-006     8.11035741     7.9792086 
+5     -8.793e-014   -1.594e-013     8.11035741     7.9792086 
+
+Spring ID: RED
+Length: 17.070503 inches
+Angle from X: 61.5746095 Degrees
+Tension: 8.08976924 N
+
+Spring ID: GREEN
+Length: 11.3774192 inches
+Angle from X: -44.4860108 Degrees
+Tension: 4.66959354 N
+
+Spring ID: BLUE
+Length: 16.892875 inches
+Angle from X: -28.1691742 Degrees
+Tension: 8.13717319 N

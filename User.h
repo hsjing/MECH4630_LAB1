@@ -16,6 +16,14 @@ using namespace std;
 
 #define ERR_THRES 0.0000001
 #define TRY_ZERO 1e-10
+#define CMD_I "ITERATE"
+#define CMD_SPRS "SPRING"
+#define CMD_TABLE "TABLES"
+
+#define MAX_X 23
+#define MIN_X 0
+#define MAX_Y 23
+#define MIN_Y 0
 
 /**
 *
@@ -38,6 +46,7 @@ using namespace std;
 class CUser
 {
 public:
+
 	CUser();
 	~CUser();
 
@@ -53,10 +62,10 @@ public:
 	bool loadfile(void);
 	/**	@fn outfile
 	* @brief outputs (parsed) simulation results into text file
-	* @param void
+	* @param string
 	* @return bool
 	*/
-	bool outfile(void);
+	bool outfile(string CMD, ofstream& currfile);
 
 	//////////////////////////////////////////////////
 	//calculation operations						//
@@ -120,6 +129,8 @@ private:
 	vector<CSpring> springs;	///< vector of simulated strings
 	CSpring tempspring;			///< tempspring for vector pushback
 
-	double rx = 1, ry = 1;		///< ring x and y coordinate
+	double rx = -1, ry = -1;	///< ring x and y coordinate
+	double itercount = 0;		///< number of iterations
+	double sumx, sumy;			///< sum of forces in x and y
 };
 

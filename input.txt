@@ -1,0 +1,13 @@
+# @brief Spring properties input
+# 
+# Use this file to input physical properties of the springs
+# within the simulation. 
+#
+# Format:
+#
+# <spring identifier> <starting x> <starting y> <compress. force> <initial length> <spring constant>
+
+
+RED 0 23 1.0 0.15 25
+GREEN 0 0 0.8 0.16 30
+BLUE 23 0 0.6 0.155 27.5
