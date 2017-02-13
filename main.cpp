@@ -10,6 +10,7 @@ CUser newuser;
 int main()
 {
 	newuser.loadfile();
+	newuser.iterate();
 
 	while (1);
 }

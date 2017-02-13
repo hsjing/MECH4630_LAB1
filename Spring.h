@@ -1,9 +1,10 @@
 #pragma once
 
 #include <string>
+#include <math.h>
 
 #define INCH_TO_M 0.0254
-#define RING_RADIUS 0.01
+#define RING_RADIUS 0.0095
 
 using namespace std;
 
@@ -39,31 +40,31 @@ public:
 	* @param void
 	* @return float
 	*/
-	float getk() { return k; };
+	double getk() { return k; };
 	/** @fn getFcs
 	* @brief return compression force
 	* @param void
 	* @return float
 	*/
-	float getFcs() { return Fcs; };
+	double getFcs() { return Fcs; };
 	/**	@fn getL0
 	* @brief return L0 (length initial)
 	* @param void
 	* @return float
 	*/
-	float getL0() { return L0; };
+	double getL0() { return L0; };
 	/**	@fn getx
 	* @brief return starting x
 	* @param void
 	* @return float
 	*/
-	float getx() { return x; };
+	double getx() { return x; };
 	/**	@fn gety
 	* @brief return starting y
 	* @param void
 	* @return float
 	*/
-	float gety() { return y; };
+	double gety() { return y; };
 	/**	@fn getc
 	* @brief return colour
 	* @param void
@@ -76,19 +77,25 @@ public:
 	* @param void
 	* @return float
 	*/
-	float getLs() { return Ls; };
+	double getLs() { return Ls; };
 	/**	@fn getangle
 	* @brief return angle in degrees
 	* @param void
 	* @return float
 	*/
-	float getangle() { return angle; };
+	double getangle() { return angle; };
 	/**	@fn gettension
 	* @brief return tension in stretched string
 	* @param void
 	* @return float
 	*/
-	float gettension() { return tension; };
+	double gettension() { return tension; };
+	/**	@fn getlambda
+	* @brief return lambda of the spring
+	* @param void
+	* @return float
+	*/
+	double getlambda() { return lambda; };
 
 	//////////////////////////////////////////////////
 	//functions that sets properties of spring		//
@@ -99,31 +106,31 @@ public:
 	* @param float
 	* @return void
 	*/
-	void setk(float nk) { k = nk; };
+	void setk(double nk) { k = nk; };
 	/**	@fn setFcs
 	* @brief set compression force
 	* @param float
 	* @return void
 	*/
-	void setFcs(float nFcs) { Fcs = nFcs; };
+	void setFcs(double nFcs) { Fcs = nFcs; };
 	/**	@fn setL0
 	* @brief set L0 (length initial)
 	* @param float
 	* @return void
 	*/
-	void setL0(float nL0) { L0 = nL0; };
+	void setL0(double nL0) { L0 = nL0; };
 	/**	@fn setx
 	* @brief set starting x
 	* @param float
 	* @return void
 	*/
-	void setx(float nx) { x = nx; };
+	void setx(double nx) { x = nx; };
 	/**	@fn sety
 	* @brief set starting y
 	* @param float
 	* @return void
 	*/
-	void sety(float ny) { y = ny; };
+	void sety(double ny) { y = ny; };
 	/**	@fn setc
 	* @brief set colour
 	* @param string
@@ -136,19 +143,25 @@ public:
 	* @param float rx (ring x), float ry (ring y)
 	* @return void
 	*/
-	void calcLs(float rx, float ry);
+	void calcLs(double rx, double ry);
 	/**	@fn calcangle
 	* @brief set angle in degrees
 	* @param float
 	* @return void
 	*/
-	void calcangle(float ry);
+	void calcangle(double ry);
 	/**	@fn calctension
 	* @brief calculates tension in stretched string
 	* @param void
 	* @return void
 	*/
 	void calctension();
+	/**	@fn calclambda
+	* @brief calculates lambda of the spring
+	* @param void
+	* @return float
+	*/
+	void calclambda();
 
 private:
 	//!@{ 
@@ -156,8 +169,9 @@ private:
 	//! Fcs = compression force, L0 = initial length
 	//! Ls = stretched length, angle = angle in degrees from horizontal
 	//! tension = tension of spring, x, y = cartesian coordinates of spring
-	//! and colour = string colour (or any string form of identification)
-	float k, Fcs, L0, Ls, angle, tension, x, y;	
+	//! colour = string colour (or any string form of identification)
+	//! and lambda = Fcs - k * L0
+	double k, Fcs, L0, Ls, angle, tension, x, y, lambda;	
 	std::string colour;
 	//!@}
 };
