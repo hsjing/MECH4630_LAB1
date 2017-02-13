@@ -13,7 +13,7 @@ using namespace std;
 
 /**
 *
-* @brief Spring object: properties and operations
+* @brief Spring object: Properties and operations
 *
 * This object represents a spring and its physical properties:
 * its spring constant, compression force, initial length, 

@@ -32,7 +32,6 @@ using namespace std;
 * This object represents the simulation environment within which
 * the Newtonian properties of the simulation (namely the ring's
 * x and y coordinates) are calculated. 
-
 * It contains: 
 * 1) the methods with which system forces and their partial 
 *	derivatives	are calculated 
